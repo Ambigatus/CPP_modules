@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:28:30 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/05/26 19:14:08 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/05/26 19:15:30 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,7 @@
 * announce() method is called. */
 Zombie::Zombie()
 {
-	_name = "Foo";
-	announce();
-}
 
-/* This is the implementation of the constructor Zombie::Zombie(std::string name),
-* which takes a parameter name of type std::string. Inside this constructor, _name
-* is set to the value passed in name, and then the announce() method is called. */
-Zombie::Zombie(std::string name)
-{
-	_name = name;
-	announce();
 }
 
 /* This is the implementation of the destructor Zombie::~Zombie(). Inside the
@@ -45,4 +35,9 @@ Zombie::~Zombie()
 void Zombie::announce( void )
 {
 	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+	_name = name;
 }
