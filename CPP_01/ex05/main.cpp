@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 15:36:08 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/04 13:18:06 by ddzuba           ###   ########.fr       */
+/*   Created: 2023/06/04 13:40:41 by ddzuba            #+#    #+#             */
+/*   Updated: 2023/06/04 13:40:54 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_HPP
-# define REPLACE_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <string.h>
-
-class Replace
+int main(int argc, char **argv)
 {
-		private:
+	Harl harl;
 
-		public:
-			Replace();
-			~Replace();
-			
-		std::string my_replace(std::string line, std::string str1, std::string str2);
-};
-
-#endif
+	harl.complain("WARNING");
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("ERROR");
+	harl.complain("FATAL");
+	return 0;
+}

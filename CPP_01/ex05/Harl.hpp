@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.hpp                                        :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 15:36:08 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/04 13:18:06 by ddzuba           ###   ########.fr       */
+/*   Created: 2023/06/04 13:22:16 by ddzuba            #+#    #+#             */
+/*   Updated: 2023/06/04 13:24:30 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_HPP
-# define REPLACE_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
 #include <iostream>
 #include <string.h>
 
-class Replace
+class Harl
 {
-		private:
+	private:
+		void debug( void );
+		void info ( void);
+		void warning ( void );
+		void error ( void );
 
-		public:
-			Replace();
-			~Replace();
-			
-		std::string my_replace(std::string line, std::string str1, std::string str2);
+	public:
+		Harl();
+		~Harl();
+
+		void complain( std::string level );
 };
 
 #endif
