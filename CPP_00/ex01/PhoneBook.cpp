@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
+/*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:34:10 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/04 16:44:43 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/05 17:31:36 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ PhoneBook::~PhoneBook()
 
 void    PhoneBook::welcome(void) const {
     std::cout << std::endl;
-    std::cout << "📞 Welcome to Your Awesome PhoneBook 📖" << std::endl;
+    std::cout << "Welcome to Your PhoneBook!" << std::endl;
     std::cout << std::endl;
     std::cout << "--------------USAGE---------------" << std::endl;
     std::cout << "ADD\t: To add a contact." << std::endl;
