@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:34:10 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/05 17:31:36 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/06/05 19:36:12 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,22 @@ int     PhoneBook::_readInput() const {
     {
         std::cout << "Please enter the contact index: " << std::flush;
         std::cin >> input;
-        if (std::cin.good() && (input >= 0 && input <= 8)) {
+        if (std::cin.good() && (input >= 0 && input <= 8) )//&& isdigit(atoi (input))) 
+        {
             //everything went well, we'll get out of the loop and return the value
             valid = true;
-        } else {
+        }
+        // else if (!isdigit(input))
+        // {
+        //     printf("NOT OK!");
+        //     valid = false;
+        // }
+        else 
+        {
             //something went wrong, we reset the buffer's state to good
             std::cin.clear();
             //and empty it
-            // std::cin.ignore(std::numeric_limits<std::streamsize> std::max(),'\n');
+            // std::cin.ignore(std::numeric_limits<std::streamsize>max(),'\n');
             std::cout << "Invalid index; please re-enter." << std::endl;
         }
     } while (!valid);

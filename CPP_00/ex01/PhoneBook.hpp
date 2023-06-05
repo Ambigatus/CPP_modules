@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
+/*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 19:09:51 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/04 16:42:01 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/05 19:25:09 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
+#include <stdlib.h>     /* atoi */
 
 class PhoneBook
 {
