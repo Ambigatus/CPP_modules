@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:34:10 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/05 19:36:12 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/06/07 18:25:04 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <limits>
 
 PhoneBook::PhoneBook(/* args */)
 {
@@ -50,26 +51,23 @@ void    PhoneBook::printContacts(void) const {
 int     PhoneBook::_readInput() const {
     int     input = -1;
     bool    valid = false;
+
     do
     {
         std::cout << "Please enter the contact index: " << std::flush;
         std::cin >> input;
-        if (std::cin.good() && (input >= 0 && input <= 8) )//&& isdigit(atoi (input))) 
+        if (std::cin.good() && (input >= 0 && input <= 8))
         {
             //everything went well, we'll get out of the loop and return the value
             valid = true;
         }
-        // else if (!isdigit(input))
-        // {
-        //     printf("NOT OK!");
-        //     valid = false;
-        // }
+    
         else 
         {
             //something went wrong, we reset the buffer's state to good
             std::cin.clear();
             //and empty it
-            // std::cin.ignore(std::numeric_limits<std::streamsize>max(),'\n');
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
             std::cout << "Invalid index; please re-enter." << std::endl;
         }
     } while (!valid);

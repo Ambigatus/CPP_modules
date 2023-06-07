@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 19:06:40 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/05 17:40:08 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/06/07 18:24:29 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-// #include <limits>
 #include <iostream>
 
 int main(void) {
