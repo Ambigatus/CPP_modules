@@ -6,11 +6,12 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:37:40 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/04 16:40:33 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/07 18:55:46 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include <limits>
 
 
 Contact::Contact(/* args */)
@@ -19,6 +20,19 @@ Contact::Contact(/* args */)
 
 Contact::~Contact()
 {
+}
+
+bool checkNumber(std::string str) 
+{
+   int i = 0;
+
+   while (str[i] != '\0')
+   {
+    if (isdigit(str[i]) == false)
+      return false;
+    i++;
+   }
+      return true;
 }
 
 std::string Contact::_getInput(std::string str) const {
@@ -43,8 +57,14 @@ void    Contact::init(void) {
     this->_firstName = this->_getInput("Please enter you first name: ");
     this->_lastName = this->_getInput("Please enter your last name: ");
     this->_nickname = this->_getInput("Please enter your nickname: ");
-    this->_nickname = this->_getInput("Please enter your phone number: ");
-    this->_nickname = this->_getInput("Please enter your darkest secret: ");
+    do 
+    {
+        this->_phoneNumber = this->_getInput("Please enter your phone number: ");
+        if (!checkNumber(this->_phoneNumber))
+            std::cout << "Invalid phone number; please re-enter." << std::endl;
+    }
+    while (!checkNumber(this->_phoneNumber));
+    this->_darkestSecret = this->_getInput("Please enter your darkest secret: ");
     std::cout << std::endl;
 }
 

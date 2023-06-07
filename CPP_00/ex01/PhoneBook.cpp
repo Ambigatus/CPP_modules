@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:34:10 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/07 18:25:04 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/07 18:57:07 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void    PhoneBook::addContact(void) {
 }
 
 void    PhoneBook::printContacts(void) const {
-    std::cout << "------------- PHONBOOK CONTACTS -------------" << std::endl;
+    std::cout << "------------- PHONEBOOK CONTACTS -------------" << std::endl;
     for (size_t i = 0; i < 8; i++) {
         this->_contacts[i].view(i);
     }
