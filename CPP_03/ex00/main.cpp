@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:09:49 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/07 16:57:26 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/07 18:22:51 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 int main( void )
 {
+	ClapTrap();
 	ClapTrap Bro("BroBot");
 	ClapTrap Furry("FurryBot");
 	int i = 0;
 	while (i < 10)
 	{
 	Bro.attack("FurryBot");
-	Furry.takeDamage(0);
+	Furry.takeDamage(5);
 	Furry.beRepaired(1);
 	i++;
 	} 
