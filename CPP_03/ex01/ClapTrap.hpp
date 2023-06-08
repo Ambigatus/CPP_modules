@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 15:42:34 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/08 10:36:34 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/08 10:58:05 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@
 
 #include <iostream>
 #include <string.h>
+#include <unistd.h>
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string	_name;
 		int			_health;
 		int			_energy;
 		int			_attack;
 		ClapTrap();
-		
 
 	public:
 		ClapTrap(std::string name); //constructor
