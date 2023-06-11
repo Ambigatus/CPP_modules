@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:09:49 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/07 18:22:51 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/11 14:25:36 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main( void )
 {
-	ClapTrap();
 	ClapTrap Bro("BroBot");
 	ClapTrap Furry("FurryBot");
 	int i = 0;

@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 10:38:26 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/08 11:02:02 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/11 17:55:03 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "Called ScavTrap destructor" << std::endl;
+	std::cout << "Called ScavTrap " << _name << " destructor" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &copy)
@@ -44,7 +44,10 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &copy)
 
 void	ScavTrap::guardGate()
 {
+	if (_health > 0)
+	{
 	std::cout << B_YELLOW << "🤖 ScavTrap Bot " << _name << " going into Gate Keeper mode."
 		<< DEFAULT << std::endl << std::endl;
 	sleep(1);
+	}
 }

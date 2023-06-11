@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 13:41:36 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/11 14:44:47 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/11 18:20:27 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ FragTrap::FragTrap(std::string name)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "Called FragTrap destructor" << std::endl;
+	std::cout << "Called FragTrap " << _name << " destructor" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &copy)
@@ -44,5 +44,6 @@ FragTrap &FragTrap::operator=(FragTrap const &copy)
 
 void FragTrap::highFivesGuys()
 {
-	std::cout << _name << " screaming " << B_PINK << "high fives guys!!!" << DEFAULT << std::endl;
+	if (_health > 0)
+		std::cout << _name << " screaming: " << B_PINK << "High Fives, guys!!!" << DEFAULT << std::endl << std::endl; 
 }

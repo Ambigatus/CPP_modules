@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 15:42:34 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/08 10:36:34 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/11 17:33:38 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ class ClapTrap
 		int			_health;
 		int			_energy;
 		int			_attack;
-		ClapTrap();
-		
 
 	public:
-		ClapTrap(std::string name); //constructor
+		ClapTrap(); //default constructor
+		ClapTrap(std::string name); //creating ClapTrap with name
 		~ClapTrap(); //deconstructor
 		ClapTrap(ClapTrap const &copy); //copy constructor
 		ClapTrap &operator=(ClapTrap const &copy); //assignment operator overload(read more about it)
 
 	void attack(const std::string& target);
 	void takeDamage(unsigned int ammount);
-	void beRepaired(unsigned int ammount);	
+	void beRepaired(unsigned int ammount);
+	void attackDamage(ClapTrap &target);
 };
 
 #endif
@@ -48,11 +48,6 @@ class ClapTrap
 /* The assignment operator overload is a special member function in C++ that allows objects
  of a class to be assigned the values of another object of the same class. It is often referred
  to as the copy assignment operator.
-
-In the code you provided, the assignment operator overload is declared as follows:
-
-
-ClapTrap &operator=(ClapTrap const &copy);
 
 The operator= is the assignment operator, and it is overloaded for the ClapTrap class.
 The ClapTrap const &copy parameter represents a constant reference to another ClapTrap object 
