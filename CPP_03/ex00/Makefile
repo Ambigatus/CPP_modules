@@ -7,9 +7,9 @@ HEADER = ClapTrap.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = clang++
+CXX = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
@@ -19,7 +19,7 @@ END	=	"\033[00m"
 all:		$(NAME)
 
 $(NAME):	$(OBJ) $(HEADER)
-			$(CC) $(FLAGS) $(OBJ) -I. -o $(NAME)
+			$(CXX) $(CXXFLAGS) $(OBJ) -I. -o $(NAME)
 			@echo $(GRN) "\tCompiled "$(NAME)" successfully!" $(END)
 
 clean:
