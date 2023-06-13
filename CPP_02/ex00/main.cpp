@@ -6,11 +6,11 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 18:59:58 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/13 08:02:39 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/13 09:08:09 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Fixed.hpp"
 
 int main( void ) {
 	
