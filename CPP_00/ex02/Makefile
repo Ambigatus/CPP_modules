@@ -16,7 +16,9 @@ SRCS = tests.cpp Account.cpp
 
 OBJS = $(SRCS:.c=.o)
 
-all: 
+all:		$(NAME)
+
+$(NAME): 
 	$(CC) $(CFLAGS) -o $(NAME) $(SRCS)
 	@echo $(GREEN)"- Compiled -"$(NONE)
 
