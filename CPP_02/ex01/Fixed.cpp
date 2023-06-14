@@ -6,11 +6,12 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 09:24:55 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/14 18:32:14 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/14 20:27:57 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath> //for roundf()
 
 Fixed::Fixed(void) {
     std::cout << "Default constructor called" << std::endl;
@@ -20,6 +21,13 @@ Fixed::Fixed(void) {
 Fixed::Fixed(const int i) {
     std::cout << "Int constructor called" << std::endl;
     this->_numFixedPointValue = i << _numFractionalBits;
+}
+
+Fixed::Fixed(const float i) {
+    std::cout << "Float constructor called" << std::endl;
+    
+    //converts floating num in fixed-point num
+    this->_numFixedPointValue = roundf( i * ( 1 << _numFractionalBits ));
 }
 
 // The reason for calling setRawBits in the copy constructor is to ensure 
@@ -51,7 +59,7 @@ Fixed::~Fixed() {
 //  By returning the raw bits, it allows users of the class 
 //  to inspect and manipulate the internal representation if needed.
 int Fixed::getRawBits( void ) const {
-    std::cout << "getRawBits member function called" << std::endl;
+    // std::cout << "getRawBits member function called" << std::endl;
     return this->_numFixedPointValue;
 }
 
@@ -60,4 +68,22 @@ int Fixed::getRawBits( void ) const {
 // representation of the fixed-point number directly.
 void    Fixed::setRawBits( int const raw ) {
     this->_numFixedPointValue = raw;
+}
+
+//extracts the integer part of the fixed-point value by shifting the bits to the right, 
+// effectively removing the fractional part. This operation allows you to obtain the whole 
+// number part of the fixed-point value.
+float   Fixed::toFloat( void ) const {
+    return static_cast<float>( this->getRawBits() ) / ( 1 << _numFractionalBits );
+}
+
+int     Fixed::toInt( void ) const {
+    return this->_numFixedPointValue >> _numFractionalBits;
+}
+
+// In essence, this operator<< overload allows you to output a Fixed object to the output stream
+//  by converting it to a float value and inserting that value into the stream.
+std::ostream & operator<<( std::ostream & o, Fixed const & i ) {
+    o << i.toFloat();
+    return o;
 }
