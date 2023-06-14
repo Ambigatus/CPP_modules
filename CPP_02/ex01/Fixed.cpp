@@ -6,16 +6,20 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 09:24:55 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/13 09:26:10 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/14 18:32:14 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//it's old variant, fix it
 #include "Fixed.hpp"
 
-Fixed::Fixed() {
+Fixed::Fixed(void) {
     std::cout << "Default constructor called" << std::endl;
     this->_numFixedPointValue = 0;
+}
+
+Fixed::Fixed(const int i) {
+    std::cout << "Int constructor called" << std::endl;
+    this->_numFixedPointValue = i << _numFractionalBits;
 }
 
 // The reason for calling setRawBits in the copy constructor is to ensure 

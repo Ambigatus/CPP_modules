@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 09:24:44 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/14 18:20:09 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/14 18:34:28 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ private:
 public:
 //default constructor(classicaly without args)
     Fixed(void);
+
+//for instanse with int arg without converting inside 
+    Fixed(const int i);
+
+//for instanse with float arg without converting inside 
+    Fixed(const float i);
     
 //copy constructor for creating a copy of obj
     Fixed( const Fixed &rhs );
