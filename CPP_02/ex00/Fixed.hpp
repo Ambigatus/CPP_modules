@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 19:00:39 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/13 08:39:47 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/14 18:06:45 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
     int                 _numFixedPointValue;
     
 //static const int to store the num of fractional bits
-    static const int    _numfractionalBits = 8;
+    static const int    _numFractionalBits = 8;
 
 public:
 //default constructor(classicaly without args)
