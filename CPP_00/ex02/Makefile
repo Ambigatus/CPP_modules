@@ -1,38 +1,33 @@
-NAME = Account
+NAME = account
 
-CC = c++
+SRC =		Account.cpp \
+			tests.cpp
 
-NONE='\033[0m'
-GREEN='\033[32m'
-GRAY='\033[2;37m'
-YELLOW='\033[33m'
-CURSIVE='\033[3m'
+HEADER = 	Account.hpp
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+OBJ = $(SRC:.cpp=.o)
 
-RM = rm -f
+CXX = c++
 
-SRCS = tests.cpp Account.cpp
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-OBJS = $(SRCS:.c=.o)
+RM = rm -rf
+
+GRN	=	"\033[32m"
+END	=	"\033[00m"
 
 all:		$(NAME)
 
-$(NAME): 
-	$(CC) $(CFLAGS) -o $(NAME) $(SRCS)
-	@echo $(GREEN)"- Compiled -"$(NONE)
+$(NAME):	$(OBJ) $(HEADER)
+			$(CXX) $(CXXFLAGS) $(OBJ) -I. -o $(NAME)
+			@echo $(GRN) "\tCompiled "$(NAME)" successfully!" $(END)
 
 clean:
-	$(RM) $(OBJS) 
-	@echo $(YELLOW)"- Removed object files -"$(NONE)
+			$(RM) $(OBJ)
 
-fclean: 
-	$(RM) $(NAME) 
-	@echo $(YELLOW)"- Removed Account's file -"$(NONE)
+fclean:		clean
+			$(RM) $(NAME)
 
-check_leaks: 
-	leaks --atExit -- ./Account
+re:			fclean all
 
-re: fclean all
-
-.PHONY: check_leaks all clean fclean re
+.PHONY:		all clean fclean re test

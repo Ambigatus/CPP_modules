@@ -12,6 +12,15 @@
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
 
+# define DEFAULT "\033[0;39m"
+# define B_RED "\033[1;31m"
+# define B_BLUE "\033[1;94m"
+# define B_YELLOW "\033[1;33m"
+# define B_GREEN "\033[1;32m"
+# define B_PINK "\033[1;35m"
+# define B_PURPURE "\033[1;35m"
+# define B_TURQUOISE "\033[36;1m"
+
 // ************************************************************************** //
 //                               Account Class                                //
 // ************************************************************************** //
@@ -67,3 +76,23 @@ private:
 
 
 #endif /* __ACCOUNT_H__ */
+
+
+/* The line #pragma once is a preprocessor directive in C++ that ensures a header
+file is included only once during the compilation process. It serves as a header
+guard or include guard to prevent multiple inclusions of the same header file, 
+which can lead to compilation errors due to redefinition of symbols.
+
+When a header file is included using #pragma once, the preprocessor checks if it 
+has already been included in the current translation unit. If it has, the subsequent
+ inclusion is ignored, saving compilation time and avoiding potential issues related
+  to redeclarations or multiple definitions.
+
+Using #pragma once is an alternative to the traditional header guards that use
+ conditional compilation directives like #ifndef and #define. It offers a simpler
+  and more efficient way to ensure single inclusion of a header file.
+
+It's important to note that #pragma once is a non-standard directive but is widely
+ supported by modern compilers. While it is generally safe to use, some developers
+  and projects still prefer the traditional header guard method for compatibility
+   reasons across different compilers and environments. */
