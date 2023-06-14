@@ -6,11 +6,10 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 09:24:44 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/13 09:25:28 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/14 18:20:09 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//it's old variant, fix it
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
@@ -23,7 +22,7 @@ private:
     int                 _numFixedPointValue;
     
 //static const int to store the num of fractional bits
-    static const int    _numfractionalBits = 8;
+    static const int    _numFractionalBits = 8;
 
 public:
 //default constructor(classicaly without args)
@@ -44,6 +43,15 @@ public:
     
 //sets the raw value of the fixed-point number
     void    setRawBits( int const raw );
+
+// converts the fixed-point value to a floating-point value
+    float   toFloat( void ) const;
+
+// converts the fixed-point value to an integer value
+    int     toInt( void ) const;
 };
+
+//control how our number is looking
+std::ostream & operator<<( std::ostream & o, Fixed const & i );
 
 #endif 
