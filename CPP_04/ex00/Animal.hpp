@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 15:27:22 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/12 15:44:12 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/23 21:28:16 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,6 @@
 #include <iostream>
 #include <string>
 
-# define DEFAULT "\033[0;39m"
-# define B_RED "\033[1;31m"
-# define B_BLUE "\033[1;94m"
-# define B_YELLOW "\033[1;33m"
-# define B_GREEN "\033[1;32m"
-# define B_PINK "\033[1;35m"
-# define B_PURPURE "\033[1;35m"
-# define B_TURQUOISE "\033[36;1m"
-
 class Animal
 {
 	protected:
@@ -32,10 +23,15 @@ class Animal
 
 	public:
 		Animal();
+		// The virtual keyword indicates that the destructor can be overridden
+		//  in derived classes. This is important when working with inheritance, 
+		//  as it allows the correct destructor
+		//  to be called when deleting an object through a pointer to the base class.
 		virtual ~Animal();
 		Animal(Animal const &copy);
 		Animal &operator=(Animal const &copy);
 
+		// The virtual keyword indicates that this function can be overridden in derived classes
 		virtual void makeSound() const;
 		std::string getType() const;
 };

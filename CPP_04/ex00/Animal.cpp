@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 15:33:19 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/12 15:53:56 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/23 21:41:39 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 Animal::Animal()
 {
-	std::cout << B_YELLOW << "Unknown Animal was born!" << DEFAULT << std::endl;
+	std::cout << "Animal: Default constructor called" << std::endl;
 	_type = "unknown type";
 }
 
 Animal::~Animal()
 {
-	std::cout << B_RED << "Unknown Animal was died. RIP." << DEFAULT << std::endl;
+	std::cout << "Animal: Denstructor called" << std::endl;
 }
 
 Animal::Animal(Animal const &copy)
 {
-	std::cout << B_TURQUOISE << "New Animal was succefully cloned!" << DEFAULT << std::endl;
+	std::cout << "Animal: Copy constructor called" << std::endl;
 	this->_type = copy._type;
 }
 
 Animal &Animal::operator=(Animal const &copy)
 {
-	std::cout << B_GREEN << "New characteristics was succefully uploaded!" << DEFAULT << std::endl;
-	if (this == &copy)
+	std::cout << "Animal: operator= called" << std::endl;
+	if(this == &copy)
 		return *this;
 	this->_type = copy._type;
 	return *this;
@@ -40,7 +40,7 @@ Animal &Animal::operator=(Animal const &copy)
 
 void Animal::makeSound() const
 {
-	std::cout << "Did you expect some words from Animal? Bruh..." << std::endl;
+	std::cout << "Animal can't talk" << std::endl;
 }
 
 std::string Animal::getType() const
