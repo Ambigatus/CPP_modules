@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 09:11:00 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/24 20:34:41 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/24 20:40:36 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 
 // No objects of an abstract class can be created (except for base subobjects of a class derived from it)
 //  and no non-static data members whose type is an abstract class can be declared.
+// if you need more about abstract - https://en.cppreference.com/w/cpp/language/abstract_class
 int main()
 {
 
