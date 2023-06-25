@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
+/*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:37:40 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/07 18:55:46 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/25 12:27:19 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,14 @@ void    Contact::view(int index) const {
 }
 
 void    Contact::display(int index) const {
-    if (this->_firstName.empty() || this->_lastName.empty() || this->_nickname.empty())
+    if (this->_firstName.empty() || this->_lastName.empty() || this->_nickname.empty() \
+        || this->_phoneNumber.empty())
         return ;
     std::cout << std::endl;
     std::cout << "---->> CONTACT #" << index << " <<----" << std::endl;
     std::cout << "First Name:\t" << this->_firstName << std::endl;
     std::cout << "Last Name:\t" << this->_lastName << std::endl;
     std::cout << "Nickname:\t" << this->_nickname << std::endl;
+    std::cout << "Number:\t" << this->_phoneNumber << std::endl; //stupid mistake
     std::cout << std::endl;
 }
