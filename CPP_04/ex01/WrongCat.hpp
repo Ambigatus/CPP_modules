@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 17:10:53 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/24 18:04:56 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/26 11:02:19 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class WrongCat: public WrongAnimal
 {
 
 	private:
-    Brain   *_brain;
+    // Brain   *_brain;
 	
 	public:
 		WrongCat();
