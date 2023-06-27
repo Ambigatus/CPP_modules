@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMaterialSource.hpp                                :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 22:09:59 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/24 22:10:49 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 11:11:08 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,10 @@
 
 class IMateriaSource
 {
-
-public:
-    virtual ~IMateriaSource() {}
-    virtual void learnMateria(AMateria*) = 0;
-    virtual AMateria* createMateria(std::string const & type) = 0;
+    public:
+        virtual             ~IMateriaSource() {}
+        virtual void        learnMateria(AMateria*) = 0;
+        virtual AMateria*   createMateria(std::string const & type) = 0;
 };
 
 #endif 

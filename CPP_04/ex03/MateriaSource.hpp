@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:16:44 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/24 22:10:21 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 11:18:39 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,23 @@
 #include "AMateria.hpp"
 #include "IMateriaSource.hpp"
 
+# define MEMORY_SIZE 4
+
 class MateriaSource : public IMateriaSource
 {
     private:
-        AMateria*       materias[4];
+        AMateria        *_inventory[MEMORY_SIZE];
+
+        void            _nullInventory();
 
     public:
         MateriaSource();
+
+        MateriaSource(MateriaSource const &copy);
+        MateriaSource   &operator=(MateriaSource const &copy);
         ~MateriaSource();
 
-        MateriaSource( MateriaSource const & );
-        MateriaSource&  operator=( MateriaSource const & );
-
-        AMateria*       getMateria( std::string const & type );
+        void            displayMemory() const;
         AMateria*       createMateria( std::string const & type );
         void            learnMateria( AMateria* );
 };

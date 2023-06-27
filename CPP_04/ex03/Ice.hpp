@@ -6,27 +6,25 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:53:58 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/24 22:03:13 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 11:12:34 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP
-#define ICE_HPP
+# define ICE_HPP
 
-#include "AMateria.hpp"
+# include "AMateria.hpp"
 
 class Ice : public AMateria
 {
-
     public:
         Ice();
-        ~Ice();
+        Ice(Ice const &copy);
+        Ice& operator=(Ice const &copy);
+        virtual ~Ice();
 
-        Ice( Ice const & );
-        Ice& operator=( Ice const & );
-
-        virtual AMateria*   clone() const;
-        virtual void        use(ICharacter& target);
+        virtual AMateria    *clone() const;
+        virtual void        use(ICharacter  &target);
 };
 
 #endif

@@ -6,14 +6,14 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:05:51 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/24 22:28:56 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 10:33:47 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
 
-AMateria::AMateria( void ) : _type("")
+AMateria::AMateria( void ) : _type("Nothing")
 {
     // std::cout << "* AMateria: materia is created *" << std::endl;
 }
@@ -33,9 +33,15 @@ AMateria::~AMateria( void )
     // std::cout << "AMateria " << this->_type << " destroyed" << std::endl;
 }
 
-std::string const & AMateria::getType() const
+std::string const &AMateria::getType() const
 {
     return this->_type;
+}
+
+AMateria &AMateria::operator=(AMateria const &copy)
+{
+    _type = copy._type;
+    return (*this);
 }
 
 AMateria* AMateria::clone() const
@@ -43,7 +49,8 @@ AMateria* AMateria::clone() const
     return (AMateria*)this;
 }
 
-void    AMateria::use( ICharacter& target )
+void    AMateria::use( ICharacter &target )
 {
-    std::cout << "AMateria " << this->_type << " used on " << target.getName() << std::endl;
+    std::cout << "Nothing was used against " << target.getName()
+        << ". As expected, without result." << std::endl;
 }
