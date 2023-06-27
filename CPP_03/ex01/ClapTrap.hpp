@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 15:42:34 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/08 10:58:05 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 21:02:30 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ class ClapTrap
 		int			_health;
 		int			_energy;
 		int			_attack;
-		ClapTrap();
 
 	public:
+		ClapTrap();
 		ClapTrap(std::string name); //constructor
 		~ClapTrap(); //deconstructor
 		ClapTrap(ClapTrap const &copy); //copy constructor

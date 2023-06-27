@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 13:41:39 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/11 19:34:04 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 21:21:24 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class FragTrap: virtual public ClapTrap
 		FragTrap(FragTrap const &copy); //copy constructor
 		FragTrap &operator=(FragTrap const &copy); //assignment operator overload
 
-		void highFivesGuys(void);
+		void	highFivesGuys(void);
+		void	attack(const std::string &target);
 };
 
 #endif

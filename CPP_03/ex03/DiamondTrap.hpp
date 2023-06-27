@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 18:31:50 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/11 19:34:11 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 21:20:00 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class DiamondTrap: public ScavTrap, public FragTrap
 		DiamondTrap &operator=(DiamondTrap const &copy);
 
 		void whoAmI();
-		void attack(const std::string& target);
+		using ScavTrap::attack;
 };
 
 #endif

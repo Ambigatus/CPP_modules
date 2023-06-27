@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:09:49 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/11 19:26:44 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 21:27:10 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ int main( void )
 	std::cout << B_GREEN << "-----------------------------------" << DEFAULT << std::endl << std::endl;
 
 	DiamondTrap Pica("Pikachu");
-	DiamondTrap Char("Charizard");
+	ScavTrap Char("Charizard");
+	FragTrap Bulb("Bulbasaur");
 	int y = 0;
 
 	while (y != 10)
@@ -73,7 +74,10 @@ int main( void )
 	Char.attack("Pikachu");
 	Pica.takeDamage(25);
 	Pica.beRepaired(25);
-	Char.whoAmI();
+	Bulb.attack("Pikachu");
+	Pica.takeDamage(12);
+	Bulb.attack("Charizard");
+	Char.takeDamage(12);
 	y++;
 	}
 	return 0;

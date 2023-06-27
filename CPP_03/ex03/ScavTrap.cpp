@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 10:38:26 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/12 15:17:55 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 21:28:41 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ void ScavTrap::attack(const std::string& target)
 		std::cout << B_PINK << "######################### NEW ROUND STARTED #########################" << DEFAULT 
 			<< std::endl << std::endl;
 		std::cout << "⚔️ Mechanical Warrior 🤖" << _name << " attacks " << target 
-			<< ", causing " << _attack << " points of physical damage!💥" << std::endl;
-		std::cout << B_YELLOW << "🔰 Holly Molly, all physical damage was absorbed"
+			<< ", causing " << _attack << " points of energy damage!💥" << std::endl;
+		std::cout << B_YELLOW << "🔰 Holly Molly, all energy damage was absorbed"
 			<< " by the energy shield!" << DEFAULT << std::endl;
 		std::cout << "🤖" << _name << " has only " << _energy << " ⚡energy left" << std::endl
 				  << std::endl;

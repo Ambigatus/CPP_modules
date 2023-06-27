@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 18:31:46 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/11 19:31:59 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 21:20:19 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,6 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &copy)
 	this->_energy = copy._energy;
 	this->_attack = copy._attack;
 	return *this;
-}
-
-void DiamondTrap::attack(const std::string& target)
-{
-	ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI()

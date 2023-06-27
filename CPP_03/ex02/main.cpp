@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:09:49 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/11 18:18:18 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 21:38:05 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main( void )
 
 	std::cout << B_GREEN << "-----------------------------------" << DEFAULT << std::endl << std::endl;
 	FragTrap Billy("Billy Herrington");
-	FragTrap Van("Van Darkholme");
+	ScavTrap Van("Van Darkholme");
 	int p = 0;
 	while (p < 10)
 	{
@@ -53,7 +53,6 @@ int main( void )
 		Billy.takeDamage(21);
 		Billy.beRepaired(3);
 		Billy.highFivesGuys();
-		Van.highFivesGuys();
 		p++;
 	}
 	return 0;

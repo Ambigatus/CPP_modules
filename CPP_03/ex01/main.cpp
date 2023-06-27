@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:09:49 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/11 17:57:12 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 21:16:50 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ int main( void )
 	// } 
 
 	std::cout << B_GREEN << "-----------------------------------" << DEFAULT << std::endl << std::endl;
-	ScavTrap Yao("Yao Min");
-	ScavTrap Poker("Poker Face");
+	ClapTrap Yao("Yao Min_Clap");
+	ScavTrap Poker("Poker Face_Scav");
 	int o = 0;
 	while (o < 10)
 	{
 	Yao.attack("Poker Face");
 	Poker.takeDamage(23);
 	Poker.beRepaired(10);
-	Yao.guardGate();
 	Poker.guardGate();
+	Poker.attack("Yao");
 	o++;
 	} 
 

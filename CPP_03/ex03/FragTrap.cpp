@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 13:41:36 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/11 19:14:19 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 21:23:17 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,36 @@ FragTrap &FragTrap::operator=(FragTrap const &copy)
 	this->_energy = copy._energy;
 	this->_attack = copy._attack;
 	return *this;
+}
+
+void FragTrap::attack(const std::string &target)
+{
+	if (_health <= 0)
+	{
+		return ;
+	}
+	if (_energy > 0)
+	{
+		_energy--;
+		std::cout << B_PINK << "######################### NEW ROUND STARTED #########################" << DEFAULT 
+			<< std::endl << std::endl;
+		std::cout << "⚔️ Mechanical Warrior 🤖" << _name << " attacks " << target 
+			<< ", causing " << _attack << " points of hydro damage!💥" << std::endl;
+		std::cout << B_YELLOW << "🔰 Holly Molly, all hydro damage was absorbed"
+			<< " by the energy shield!" << DEFAULT << std::endl;
+		std::cout << "🤖" << _name << " has only " << _energy << " ⚡energy left" << std::endl
+				  << std::endl;
+		if (_energy < 4)
+			std::cout << B_RED << "⚠️WARNING! " << DEFAULT << _name << " has only " << _energy
+					  << " energy left!" << std::endl
+					  << std::endl;
+		if (_energy == 0)
+		{
+			std::cout << "⛔ No energy points. Turning off..." << std::endl
+				  << std::endl;
+			return ;
+		}
+	}
 }
 
 void FragTrap::highFivesGuys()
