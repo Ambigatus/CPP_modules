@@ -6,27 +6,28 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 15:33:19 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/24 20:32:16 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/26 18:47:14 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal()
+Animal::Animal() : _type("Unknown Animal")
 {
 	std::cout << "Animal: Default constructor called" << std::endl;
-	_type = "unknown type";
+	return ;
 }
 
 Animal::~Animal()
 {
 	std::cout << "Animal: Destructor called" << std::endl;
+	return ;
 }
 
 Animal::Animal(Animal const &copy)
 {
+	*this = copy;
 	std::cout << "Animal: Copy constructor called" << std::endl;
-	this->_type = copy._type;
 }
 
 Animal &Animal::operator=(Animal const &copy)
@@ -41,6 +42,7 @@ Animal &Animal::operator=(Animal const &copy)
 void Animal::makeSound() const
 {
 	std::cout << "Animal can't talk" << std::endl;
+	return ;
 }
 
 std::string Animal::getType() const

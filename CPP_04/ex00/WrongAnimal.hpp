@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 17:07:42 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/24 17:24:21 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/27 20:08:04 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class WrongAnimal
 		WrongAnimal &operator=(WrongAnimal const &copy);
 
 		// The virtual keyword indicates that this function can be overridden in derived classes
-		virtual void makeSound() const;
+		void makeSound() const;
 		std::string getType() const;
 };
 

@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 19:53:32 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/24 18:04:29 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/26 18:13:48 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,23 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
 
     private:
-    
-    Brain   *_brain;
+        Brain   *_brain;
     
     public:
         Dog( void );
-        ~Dog( void );
+        virtual ~Dog( void );
         Dog(Dog const &copy);
         Dog &operator=(Dog const &copy);
 
-    void   makeSound( void ) const;
+    virtual void            makeSound( void ) const;
+    void                    setIdea(int index, std::string idea);
+    std::string             getIdea(int index) const;
 };
 
 #endif

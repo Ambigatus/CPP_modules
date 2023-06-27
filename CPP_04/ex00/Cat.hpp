@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 21:26:11 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/06/23 21:37:37 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/06/24 17:31:34 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Cat: public Animal
 {
 	public:
 		Cat();
-		~Cat();
+		virtual ~Cat();
 		Cat(Cat const &copy);
 		Cat &operator=(Cat const &copy);
 
