@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:08:18 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/21 15:31:47 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:32:21 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,36 @@ class Converter
 		float   		getF( void ) const;
 		std::string    	getStr( void ) const;
 
-		void    setC( char c );
-		void    setI( int i );
-		void    setD( double d );
-		void    setF( float f );
-		void    setStr( std::string str );
+		void    		setC( char c );
+		void    		setI( int i );
+		void    		setD( double d );
+		void    		setF( float f );
+		void    		setStr( std::string str );
 		
 	//for pseudo literals
-	bool    Converter::isLiterals( void ) const;
+		bool    		isLiterals( void ) const;
+	//for recognizing types
+		bool    		isChar( void ) const;
+		bool    		isInt( void ) const;
+		bool			isDouble( void ) const;
+		bool    		isFloat ( void ) const;
+		bool    		isImpossible( void );
+
+		void    		setType( void );
+	//for printing
+		void   			printDouble( void ) const;
+		void    		printFloat( void ) const;
+		void    		printInt( void ) const;
+		void    		printChar( void ) const;
+		
+	//for converting 
+		void    		convert( void );
+	//custom exeption 
+	 class ConverterException : public std::exception {
+        virtual const char* what() const throw() { return "Unknown type"; }
+    };
 };
+
+std::ostream& operator<<( std::ostream& out, const Converter& rhs );
 
 #endif
