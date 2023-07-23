@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:08:52 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/21 16:35:20 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/07/23 12:12:53 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,15 @@ Converter::Converter()
 	this->_f = 0.0f;
 }
 
-Converter::~Converter()
-{
-	std::cout << "Converter: Destructor called" << std::endl;
-}
-
 Converter::Converter(Converter const &copy)
 {
 	std::cout << "Converter: Copy constructor called" << std::endl;
-	this->_type = copy._type;
+	*this = copy;
 }
 
 Converter &Converter::operator=(Converter const &copy)
 {
 	std::cout << "Converter: operator= called" << std::endl;
-	// if(this == &copy)
-	// 	return *this;
-	// this->_type = copy._type;
 	if ( this != &copy)
 	{
 		this->_i = copy.getI();
@@ -45,6 +37,11 @@ Converter &Converter::operator=(Converter const &copy)
 		this->_f = copy.getF();
 	}
 	return *this;
+}
+
+Converter::~Converter()
+{
+	std::cout << "Converter: Destructor called" << std::endl;
 }
 
 //getters 
@@ -67,6 +64,10 @@ double	Converter::getD(void) const
 float	Converter::getF(void) const 
 {
 	return this->_f;
+}
+
+e_type  Converter::getType( void ) const {
+    return this->_type;
 }
 
 //check it
@@ -99,7 +100,11 @@ void	Converter::setF(float f)
 
 void	Converter::setStr(std::string str)  
 {
-	this->_str = str;
+	 this->_str = str;
+    this->setType();
+    if ( getType() == NONE ) {
+        throw Converter::ConverterException();
+    }
 	
 }
 

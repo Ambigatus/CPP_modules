@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:08:18 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/21 16:32:21 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/07/23 12:02:38 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <limits>
 
 enum e_type {
     NONE,
@@ -22,7 +24,7 @@ enum e_type {
     FLOAT,
     CHAR,
     DOUBLE,
-    LITERALS //??
+    LITERALS 
 };
 
 class Converter
@@ -53,6 +55,7 @@ class Converter
 		double  		getD( void ) const;
 		float   		getF( void ) const;
 		std::string    	getStr( void ) const;
+		e_type			getType( void ) const;
 
 		void    		setC( char c );
 		void    		setI( int i );
