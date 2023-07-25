@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 16:50:38 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/25 16:57:12 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:02:42 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class Base
 
 public:
 	virtual ~Serializer();
-
-	Base * generate(void);
-	void identify(Base* p);
-	void identify(Base& p);
 };
+
+Base * generate(void);
+void identify(Base* p);
+void identify(Base& p);
 
 #endif
