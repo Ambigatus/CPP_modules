@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/21 13:03:55 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/27 17:04:51 by hboichuk         ###   ########.fr       */
+/*   Created: 2023/07/27 16:26:15 by hboichuk          #+#    #+#             */
+/*   Updated: 2023/07/27 17:05:29 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
-int	main(int argc, char **argv)
-{
-	std::vector<int> vector;
-	std::list<int> list;
-	
-	if (argc != 2)
-		return EXIT_FAILURE;
-	
-	//first test 
-	for (int i = 0;i < 10; i++)
-		vector.push_back(i);
+#include <iostream>
+#include <algorithm>
+#include <exception>
+#include <vector>
+#include <list>
+#include "easyfind.tpp"
 
-	//second test
-	for (int y = 0;y < 10; y++)
-		list.push_back(y);
-	
-	easyfind(vector, std::atoi( argv[1]));
-	easyfind(list, std::atoi( argv[1]));
-	return EXIT_SUCCESS;
-}
+//we need template in hpp and tpp
+template<typename T>
+void	easyfind(T &container, int n);
+
+
+#endif

@@ -1,11 +1,9 @@
-NAME = converter
+NAME = easyfind
 
 SRC =		main.cpp \
-			Converter.cpp \
-			
-
 		
-HEADER = 	Converter.hpp \
+HEADER = 	easyfind.hpp \
+			easyfind.tpp \
 			
 
 OBJ = $(SRC:.cpp=.o)
