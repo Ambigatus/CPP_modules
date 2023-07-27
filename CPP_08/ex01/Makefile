@@ -1,9 +1,9 @@
-NAME = easyfind
+NAME = span
 
 SRC =		main.cpp \
+			Span.cpp \
 		
-HEADER = 	easyfind.hpp \
-			easyfind.tpp \
+HEADER = 	Span.hpp \
 			
 
 OBJ = $(SRC:.cpp=.o)
