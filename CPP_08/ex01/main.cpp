@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:03:55 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/31 16:38:35 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/07/31 16:48:38 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ int	main(void)
 	// *********
 
 	//hard test with variative value
-	int amount = 100;
-	Span hard = Span(amount);
-	hard.addManyNumbers(amount);
+	// int amount = 100;
+	// Span hard = Span(amount);
+	// hard.addManyNumbers(amount);
 
-	//where are my numbers
-	for (int i = 0; i < amount; i++)
-        std::cout << hard[i] << std::endl;
+	// //where are my numbers
+	// for (int i = 0; i < amount; i++)
+    //     std::cout << hard[i] << std::endl;
 
-	std::cout << "Here spans:" << std::endl;
-	std::cout << hard.shortestSpan() << std::endl;
-	std::cout << hard.longestSpan() << std::endl;
+	// std::cout << "Here spans:" << std::endl;
+	// std::cout << hard.shortestSpan() << std::endl;
+	// std::cout << hard.longestSpan() << std::endl;
 
 
 	return EXIT_SUCCESS;
