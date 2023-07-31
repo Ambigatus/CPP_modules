@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:12:26 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/07/25 18:10:22 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/07/31 12:54:10 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 # include <iostream>
 # include "Bureaucrat.hpp"
+# include "Utils.hpp"
 
+class Bureaucrat;
 
 class AForm
 {
@@ -30,7 +32,7 @@ class AForm
 		AForm(STR const name, int gradeSign, int gradeExec);
 		AForm(AForm const &copy);
 		AForm &operator=(AForm const &copy);
-		virtual		~AForm();
+		virtual		~AForm(){};
 
 		STR				getName() const;
 		bool			getSign() const;
@@ -43,8 +45,8 @@ class AForm
 		class GradeTooHighExeption : public std::exception
 		{
 			public:
-				GradeTooHighExeption();
-				virtual ~GradeTooHighExeption() throw ();
+				GradeTooHighExeption(){};
+				virtual ~GradeTooHighExeption() throw (){};
 				
 				virtual const char *what() const throw();
 		};
@@ -52,8 +54,8 @@ class AForm
 		class GradeTooLowExeption : public std::exception
 		{
 			public:
-				GradeTooLowExeption();
-				virtual ~GradeTooLowExeption() throw();
+				GradeTooLowExeption(){};
+				virtual ~GradeTooLowExeption() throw(){};
 
 				virtual const char *what() const throw();
 		};

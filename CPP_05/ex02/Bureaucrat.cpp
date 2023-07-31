@@ -6,17 +6,12 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:10:33 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/07/25 17:10:36 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/07/31 12:35:25 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
-
-#define BUREAUCRAT_EXCEPTION_MSG(OBJ_FORM,OBJ_EXCEPT) CERR << B_RED << this->_name \
-             << " couldn't signed " \
-             << form.getName() << " because " \
-             << e.what() << DEFAULT << ENDL; \
+#include "AForm.hpp"
 
 int const Bureaucrat::_max_grade = 1;
 int const Bureaucrat::_min_grade = 150;
@@ -137,7 +132,7 @@ void Bureaucrat::decGrade()
 	}
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
     try
     {
@@ -147,18 +142,35 @@ void Bureaucrat::signForm(Form &form)
             COUT << B_GREEN << this->_name << " signed " << form.getName() << DEFAULT << ENDL;
         }
     }
-    catch( Form::GradeTooLowException& e)
+    catch(std::exception &ex)
     {
-        BUREAUCRAT_EXCEPTION_MSG(form,e);
+        COUT << B_RED << "<" << this->getName() << "> cannot sign <" << form.getName()
+		<< "> because " << ex.what();
     }
-    catch ( Form::GradeTooHighException &e)
+    catch(const char *ex)
     {
-        BUREAUCRAT_EXCEPTION_MSG(form,e);
+		COUT << B_RED << ex << DEFAULT << ENDL;
     }
-    catch ( std::exception &e)
-    {
-        BUREAUCRAT_EXCEPTION_MSG(form,e);
-    }
+}
+
+void Bureaucrat::executeForm(AForm &form)
+{
+	try
+	{
+		form.execute(*this);
+		COUT << B_BLUE << "<" << this->getName() << "> executes <" << form.getName() <<
+		">" << DEFAULT << ENDL;
+	}
+	catch(const std::exception& e)
+	{
+		COUT << B_RED << "<" << this->getName() << "> cannot be executed by <" 
+		<< form.getName() << "because " << e.what();
+	}
+	catch(const char *e)
+	{
+		COUT << B_RED << e << DEFAULT << ENDL;
+	}
+	
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()

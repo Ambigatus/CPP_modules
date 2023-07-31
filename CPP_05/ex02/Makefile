@@ -2,10 +2,16 @@ NAME = bureaucrat
 
 SRC =		main.cpp \
 			Bureaucrat.cpp \
-			Form.cpp
+			AForm.cpp \
+			PresidentialPardonForm.cpp \
+			RobotomyRequestForm.cpp \
+			ShrubberyCreationForm.cpp
 		
 HEADER = 	Bureaucrat.hpp \
-			Form.hpp \
+			AForm.hpp \
+			PresidentialPardonForm.hpp \
+			RobotomyRequestForm.hpp \
+			ShrubberyCreationForm.hpp \
 			Utils.hpp
 
 OBJ = $(SRC:.cpp=.o)

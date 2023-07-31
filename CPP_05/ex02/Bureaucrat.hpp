@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:10:49 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/07/25 17:14:40 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/07/31 11:58:28 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class Bureaucrat
 		static int		getMaxGrade();
 		static int		getMinGrade();
 		void			signForm(AForm &form);
+		void			executeForm(AForm &form);
 
 		class GradeTooHighException : public std::exception
 		{
