@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:14:03 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/31 14:16:41 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/07/31 16:39:05 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,16 @@ void	Span::addNumber(unsigned int i)
 	if (_data.size() >= _n)
 		throw std::out_of_range("Data is full");
 	_data.push_back(i);
+}
+
+void	Span::addManyNumbers(unsigned int range)
+{
+	srand(time(NULL));
+	for (unsigned int y = 0; y < range; y++) 
+	{
+		int num = std::rand() % range;
+		_data.push_back(num);
+	}
 }
 
 //another variant

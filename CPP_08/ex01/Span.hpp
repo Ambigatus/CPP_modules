@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 16:26:15 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/31 14:14:47 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/07/31 14:27:01 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class Span
 
 	//functions for span
 		void				addNumber(unsigned int i);
+		void				addManyNumbers(unsigned int range);
 		unsigned int		shortestSpan(void);
 		unsigned int		longestSpan(void);
 	
