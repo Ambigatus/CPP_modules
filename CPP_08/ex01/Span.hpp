@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 16:26:15 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/31 12:20:12 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/07/31 14:14:47 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 
 #include <iostream>
 #include <algorithm>
-#include <exception>
+#include <exception> //kinds - https://cplusplus.com/reference/exception/exception/
 #include <vector>
 #include <list>
 #include <cmath>
+#include <numeric>
 
 
 class Span
 {
 	private:
 		unsigned int _n;
-		// std::list<int> _list;
+		//vector container is the same as dynamic arrays
 		std::vector<int>  _data;
 		
 		Span(void);
@@ -41,8 +42,8 @@ class Span
 
 	//functions for span
 		void				addNumber(unsigned int i);
-		// unsigned int		shortestSpan(void);
-		// unsigned int		longestSpan(void);
+		unsigned int		shortestSpan(void);
+		unsigned int		longestSpan(void);
 	
 };
 
