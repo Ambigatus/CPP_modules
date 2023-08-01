@@ -1,9 +1,9 @@
-NAME = span
+NAME = mutantStack
 
 SRC =		main.cpp \
-			Span.cpp \
 		
-HEADER = 	Span.hpp \
+HEADER = 	MutantStack.hpp \
+			MutantStack.tpp \
 			
 
 OBJ = $(SRC:.cpp=.o)

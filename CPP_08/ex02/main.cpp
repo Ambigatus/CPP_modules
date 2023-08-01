@@ -6,47 +6,35 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:03:55 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/31 16:48:38 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/08/01 16:06:07 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "MutantStack.hpp"
 
 int	main(void)
 {
-	//simple test
-	// Span sp = Span(5);
-	// sp.addNumber(6);
-	// sp.addNumber(3);
-	// sp.addNumber(17);
-	// sp.addNumber(9);
-	// sp.addNumber(11);
-	// // sp.addNumber(12);//Data is full
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
 
-	// //where are my numbers
-	// for (int i = 0; i < 5; i++)
-    //     std::cout << sp[i] << std::endl;
-		
-	// std::cout << "Here spans:" << std::endl;
-	// std::cout << sp.shortestSpan() << std::endl;
-	// std::cout << sp.longestSpan() << std::endl;
-
-	// *********
-
-	//hard test with variative value
-	// int amount = 100;
-	// Span hard = Span(amount);
-	// hard.addManyNumbers(amount);
-
-	// //where are my numbers
-	// for (int i = 0; i < amount; i++)
-    //     std::cout << hard[i] << std::endl;
-
-	// std::cout << "Here spans:" << std::endl;
-	// std::cout << hard.shortestSpan() << std::endl;
-	// std::cout << hard.longestSpan() << std::endl;
-
-
-	return EXIT_SUCCESS;
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::stack<int> s(mstack);
+	return 0;
 	
 }
