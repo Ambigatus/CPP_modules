@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:03:55 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/08/01 15:50:14 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/07/31 16:48:38 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 int	main(void)
 {
 	//simple test
-	Span sp = Span(5);
-	sp.addNumber(6);
-	sp.addNumber(3);
-	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(11);
-	// sp.addNumber(12);//Data is full
+	// Span sp = Span(5);
+	// sp.addNumber(6);
+	// sp.addNumber(3);
+	// sp.addNumber(17);
+	// sp.addNumber(9);
+	// sp.addNumber(11);
+	// // sp.addNumber(12);//Data is full
 
-	//where are my numbers
-	for (int i = 0; i < 5; i++)
-        std::cout << sp[i] << std::endl;
+	// //where are my numbers
+	// for (int i = 0; i < 5; i++)
+    //     std::cout << sp[i] << std::endl;
 		
-	std::cout << "Here spans:" << std::endl;
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
+	// std::cout << "Here spans:" << std::endl;
+	// std::cout << sp.shortestSpan() << std::endl;
+	// std::cout << sp.longestSpan() << std::endl;
 
 	// *********
 
