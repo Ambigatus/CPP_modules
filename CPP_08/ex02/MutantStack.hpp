@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 15:55:36 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/08/01 16:14:36 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/08/01 16:49:02 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,34 +20,27 @@
 #include <list>
 #include <cmath>
 #include <numeric>
-#include "MutantStack.tpp"
+# include <stack>
 
 
-class MutantStack
+template <typename T>
+
+class MutantStack: public std::stack<T> 
 {
 	private:
-		// unsigned int _n;
-		// //vector container is the same as dynamic arrays
-		// std::vector<int>  _data;
-		
-		MutantStack(void);
 	
 	public:
-		MutantStack(unsigned int);
+		MutantStack(void);
 		~MutantStack();
-		MutantStack(Span const &copy);
-		MutantStack &operator=(Span const &copy);
+		MutantStack(MutantStack const &copy);
+		MutantStack &operator=(MutantStack const &copy);
 
-		//for working with our numbers
-		// int & operator[] (unsigned int index);
-
-	//functions for span
-		// void				addNumber(unsigned int i);
-		// void				addManyNumbers(unsigned int range);
-		// unsigned int		shortestSpan(void);
-		// unsigned int		longestSpan(void);
+		typedef typename std::stack<T>::container_type::iterator iterator;
+    	iterator begin();
+    	iterator end();
 	
 };
 
+#include "MutantStack.tpp"
 
 #endif
