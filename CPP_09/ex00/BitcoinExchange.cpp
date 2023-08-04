@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:13:42 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/08/04 20:10:16 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/08/04 20:36:38 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,14 @@ void BitcoinExchange::setValue(const std::string& date, double rate)
 const std::map<std::string, double>& BitcoinExchange::getValue() const 
 {
 	return value;
+}
+
+//checkers and other helpers
+void	checkFile(void)
+{
+	std::ifstream dataFile("data.csv");
+	if (!dataFile) {
+		std::cerr << "Error: could not open data file." << std::endl;
+		exit(1);
+	}
 }
