@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:03:55 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/08/02 16:57:14 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/08/04 20:02:44 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int argc, char **argv)
 		std::cerr << "You need 2 arguments!" << std::endl;
 		return EXIT_FAILURE;
 	}
+	
+	std::string _file = argv[1];
 	
 	return EXIT_SUCCESS;
 }
