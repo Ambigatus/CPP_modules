@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:03:55 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/08/04 20:35:18 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/08/05 16:15:58 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	main(int argc, char **argv)
 	std::string _file = argv[1];
 
 	//checkers
-	checkFile();
+	// checkFile();
+	startExchange(_file);
 	
 	
 	return EXIT_SUCCESS;

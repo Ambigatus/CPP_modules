@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:13:53 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/08/04 20:34:43 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/08/05 16:16:06 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ class BitcoinExchange
 	 
 };
 
-void	checkFile(void);
+void	checkFile(std::ifstream& dataFile);
+void	startExchange(std::string _file); //??
 
 #endif
