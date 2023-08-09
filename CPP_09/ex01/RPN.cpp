@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 14:26:51 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/08/06 14:47:21 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/08/09 15:45:21 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,98 @@ void	RPN::_processElements()
 			exit(-1);
 		_numbers.push(num);
 	}
+}
+
+bool	RPN::_isOperatorNext(STR element)
+{
+	return (element == "+" ||
+			element == "-" ||
+			element == "/" ||
+			element == "*");
+}
+
+bool	RPN::_isOperationPosibble(STR element)
+{
+	if (_numbers.size() >= 2)
+		return true;
+	if (element == "+")
+		COUT << B_RED << ERR_SUM << DEFAULT << ENDL;
+	if (element == "-")
+		COUT << B_RED << ERR_SUBS << DEFAULT << ENDL;
+	if (element == "*")
+		COUT << B_RED << ERR_MULT << DEFAULT << ENDL;
+	if (element == "/")
+		COUT << B_RED << ERR_DIV << DEFAULT << ENDL;
+	return false;
+}
+
+void	RPN::_performOperations(STR element)
+{
+	int	operand;
+	int	output;
+
+	operand = _numbers.top();
+	_numbers.pop();
+	if (element == "+")
+		output = _numbers.top() + operand;
+	if (element == "-")
+		output = _numbers.top() - operand;
+	if (element == "*")
+		output = _numbers.top() * operand;
+	if (element == "/")
+	{		
+		if (operand == 0)
+		{
+			COUT << B_RED << ERR_ZERO << DEFAULT << ENDL;
+			exit(-1);
+		}
+		output = _numbers.top() / operand;
+	}
+	_numbers.pop();
+	_numbers.push(output);
+}
+
+int		RPN::_extractNextNumber(STR element)
+{
+	int	num;
+
+	std::istringstream iss(element);
+	if (!(iss >> num))
+	{
+		COUT << B_RED << ERR_INPUT << DEFAULT << ENDL;
+		exit(-1);
+	}
+	return num;
+}
+
+bool	RPN::_isNumberValid(int num)
+{
+	if (num > 9 || num < -9)
+	{
+		COUT << B_RED << ERR_NUMBER << DEFAULT << ENDL;
+		return false;
+	}
+	return true;
+}
+
+void	RPN::_displayResult()
+{
+	if (_numbers.size() == 1)
+		COUT << _numbers.top() << ENDL;
+	else
+	{
+		COUT << B_RED << ERR_OPERATORS << DEFAULT << ENDL;
+		exit(-1);
+	}
+}
+
+RPN::RPN() {}
+
+RPN::~RPN() {}
+
+void	RPN::calculate(char input[])
+{
+	_splitInput(input);
+	_processElements();
+	_displayResult();
 }

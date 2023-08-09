@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 16:28:41 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/08/04 15:57:26 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/08/09 15:09:57 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,13 @@
 # define CERR std::cerr
 # define ENDL std::endl
 # define STR  std::string
+# define ERR_SUM			"ERROR: Not enough operands for the '+' operator!"
+# define ERR_SUBS			"ERROR: Not enough operands for the '-'operator!"
+# define ERR_MULT			"ERROR: Not enough operands for the '*' operator!"
+# define ERR_DIV			"ERROR: Not enough operands for the '/' operator!"
+# define ERR_ZERO			"ERROR: HOW DARE YOU TRYING DIVIDE BY ZERO?!"
+# define ERR_INPUT			"ERROR: Invalid input element!"
+# define ERR_NUMBER			"ERROR: Allowed numbers are between -9 and 9!"
+# define ERR_OPERATORS		"ERROR: Not enough operators!"
+# define ERR_ARGS			"ERROR: Only a string of operations allowed!"
+# define EXAMPLE			"Example: ./RPN  5 3 4 + *"
