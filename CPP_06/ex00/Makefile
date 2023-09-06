@@ -1,11 +1,11 @@
 NAME = converter
 
 SRC =		main.cpp \
-			Converter.cpp \
+			ScalarConverter.cpp \
 			
 
 		
-HEADER = 	Converter.hpp \
+HEADER = 	ScalarConverter.hpp \
 			
 
 OBJ = $(SRC:.cpp=.o)
