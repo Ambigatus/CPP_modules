@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:03:55 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/25 17:40:20 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/09/06 18:41:39 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int	main(void)
     identify(ptr);
     identify(ref);
 
+    delete ptr;
     return EXIT_SUCCESS;
 }
