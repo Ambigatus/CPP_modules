@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:03:55 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/09/06 18:09:30 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/09/06 18:54:10 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int	main(void)
                     "Content: " << data2->age << "  " << data2->name << std::endl;
     std::cout << std::endl;
 
+    delete data;
     return EXIT_SUCCESS;
 }
