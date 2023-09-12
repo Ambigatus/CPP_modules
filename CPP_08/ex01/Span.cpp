@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:14:03 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/31 16:39:05 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/09/12 19:02:07 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,37 +73,37 @@ void	Span::addManyNumbers(unsigned int range)
 
 //another variant
 //bubble sort for span
-// unsigned int	Span::shortestSpan(void)
-// {
-// 	if (_data.size() == 0 || _data.size() == 1)
-// 		throw std::length_error("Not enough numbers!");
-
-// 		std::vector<int>::iterator it = _data.begin();
-//     std::vector<int>::iterator it2;
-
-//     unsigned int min = abs(*it - *(it + 1));
-//     for (it = _data.begin() ; it != _data.end(); it++)
-//     {
-//         for (it2 = it + 1; it2 != _data.end(); ++it2)
-//         {
-//             unsigned int k = abs(*it2 - *it);
-//             if (k < min)
-//                 min = k;
-//         }
-//     }
-//     return (min);
-// }
-
 unsigned int	Span::shortestSpan(void)
 {
-	int shortest_span;
+	if (_data.size() == 0 || _data.size() == 1)
+		throw std::length_error("Not enough numbers!");
 
-	std::sort(this->_data.begin(), this->_data.end());
-	std::vector<int> diffs(this->_data.size() - 1); // "diffs" dynamic size array; this->_collection.size() returns the number of elements in the set container.
-	std::adjacent_difference(this->_data.begin(), this->_data.end(), diffs.begin()); 
-	shortest_span = *std::min_element(diffs.begin(), diffs.end());
-	return (shortest_span);
+		std::vector<int>::iterator it = _data.begin();
+    std::vector<int>::iterator it2;
+
+    unsigned int min = abs(*it - *(it + 1));
+    for (it = _data.begin() ; it != _data.end(); it++)
+    {
+        for (it2 = it + 1; it2 != _data.end(); ++it2)
+        {
+            unsigned int k = abs(*it2 - *it);
+            if (k < min)
+                min = k;
+        }
+    }
+    return (min);
 }
+
+// unsigned int	Span::shortestSpan(void)
+// {
+// 	int shortest_span;
+
+// 	std::sort(this->_data.begin(), this->_data.end());
+// 	std::vector<int> diffs(this->_data.size() - 1); // "diffs" dynamic size array; this->_collection.size() returns the number of elements in the set container.
+// 	std::adjacent_difference(this->_data.begin(), this->_data.end(), diffs.begin()); 
+// 	shortest_span = *std::min_element(diffs.begin(), diffs.end());
+// 	return (shortest_span);
+// }
 
 unsigned int	Span::longestSpan(void)
 {

@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:03:55 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/08/01 15:50:14 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/09/12 19:01:22 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(void)
 	// *********
 
 	//hard test with variative value
-	// int amount = 100;
+	// int amount = 10000;//only for 10 000, with more memory is too full
 	// Span hard = Span(amount);
 	// hard.addManyNumbers(amount);
 
