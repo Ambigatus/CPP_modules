@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 16:26:15 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/07/31 14:27:01 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/09/13 15:25:20 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Span
 		Span(void);
 	
 	public:
-		Span(unsigned int);
+		Span(unsigned int n);
 		~Span();
 		Span(Span const &copy);
 		Span &operator=(Span const &copy);
@@ -45,6 +45,16 @@ class Span
 		void				addManyNumbers(unsigned int range);
 		unsigned int		shortestSpan(void);
 		unsigned int		longestSpan(void);
+
+		//exception part
+		class	SpanException : public std::exception {
+    		private:
+        		std::string _msg;
+    		public:
+        		SpanException(std::string msg): _msg(msg){};
+        		virtual ~SpanException() throw (){};
+        		virtual const char* what() const throw(){ return (_msg.c_str());};
+    };
 	
 };
 
