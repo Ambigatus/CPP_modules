@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 16:26:15 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/09/13 15:25:20 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:42:26 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 #include <list>
 #include <cmath>
 #include <numeric>
-
 
 class Span
 {
@@ -41,8 +40,9 @@ class Span
 		int & operator[] (unsigned int index);
 
 	//functions for span
-		void				addNumber(unsigned int i);
-		void				addManyNumbers(unsigned int range);
+		void	addNumber(unsigned int i);
+		void	addManyNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+		
 		unsigned int		shortestSpan(void);
 		unsigned int		longestSpan(void);
 

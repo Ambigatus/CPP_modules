@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:14:03 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/09/13 15:24:59 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:41:48 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,19 @@ void	Span::addNumber(unsigned int i)
 	_data.push_back(i);
 }
 
-void	Span::addManyNumbers(unsigned int range)
+void	Span::addManyNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
-	srand(time(NULL));
-	for (unsigned int y = 0; y < range; y++) 
+	while (begin < end)
 	{
-		int num = std::rand() % range;
-		_data.push_back(num);
+		try
+		{
+			this->addNumber(*begin);
+		}
+		catch (std::exception &e)
+		{
+			throw SpanException("The Array is full, can't put the number!");
+		}
+		begin++;
 	}
 }
 
