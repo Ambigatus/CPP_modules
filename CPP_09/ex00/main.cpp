@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 13:03:55 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/08/05 16:15:58 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:49:48 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {	
 	if (argc != 2) 
 	{
-		std::cerr << "You need 2 arguments!" << std::endl;
+		std::cerr << "Error: could not open file." << std::endl;
 		return EXIT_FAILURE;
 	}
 	

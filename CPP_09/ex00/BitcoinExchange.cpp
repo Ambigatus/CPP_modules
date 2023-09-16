@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:13:42 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/09/16 16:42:07 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/09/16 17:37:55 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ void	startExchange(std::string _file)
 				std::cerr << "Error: not a positive number." << std::endl;
 				continue;
 			}
-
+			//new version
 			double exchangeRate = exchange.getValue(date);
 			if (exchangeRate == 0.0) {
 				// Find the closest date in the data file
@@ -140,11 +140,20 @@ void	startExchange(std::string _file)
 
 				if (dateToRate.empty()) {
 					std::cerr << "Error: no exchange rate found for date " << date << " on line " << inputLine << std::endl;
-					continue;
+					
+					double minDifference = std::numeric_limits<double>::max();
+        			for (std::map<double, double>::const_iterator it = dateToRate.begin(); it != dateToRate.end(); ++it) {
+            			if (it->first < minDifference) {
+        					minDifference = it->first;
+        					exchangeRate = it->second;
+    					}
+				}
 				}
 
 				exchangeRate = dateToRate.begin()->second;
 			}
+
+			
 
 			if (std::abs(value) > 1000) {
 				std::cerr << "Error: too large a number." << std::endl;
@@ -169,4 +178,3 @@ void	checkFile(std::ifstream& dataFile)
 		exit(1);
 	}
 }
-
