@@ -6,7 +6,7 @@
 /*   By: hboichuk <hboichuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:13:42 by hboichuk          #+#    #+#             */
-/*   Updated: 2023/08/05 16:20:33 by hboichuk         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:42:07 by hboichuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 //ortodox construction
 BitcoinExchange::BitcoinExchange()
 {
-	std::cout << "BitcoinExchange: Default constructor called" << std::endl;
+	// std::cout << "BitcoinExchange: Default constructor called" << std::endl;
 }
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &copy)
@@ -37,7 +37,7 @@ BitcoinExchange& BitcoinExchange::operator=(BitcoinExchange const &copy) {
 
 BitcoinExchange::~BitcoinExchange()
 {
-	std::cout << "BitcoinExchange: Destructor called" << std::endl;
+	// std::cout << "BitcoinExchange: Destructor called" << std::endl;
 }
 
 //getter and setter
@@ -67,6 +67,7 @@ const std::map<std::string, double>& BitcoinExchange::getValue() const
 }
 
 //checkers and other helpers
+// 88?
 void	startExchange(std::string _file)
 {
 	std::ifstream dataFile("data.csv");
@@ -145,11 +146,15 @@ void	startExchange(std::string _file)
 				exchangeRate = dateToRate.begin()->second;
 			}
 
-			double bitcoinValue = value * exchangeRate;
-			if (std::abs(bitcoinValue) > 1000) {
+			if (std::abs(value) > 1000) {
 				std::cerr << "Error: too large a number." << std::endl;
 			} else {
-				std::cout << date << " => " << value << " = " << std::fixed << std::setprecision(2) << bitcoinValue << std::endl;
+				double bitcoinValue = value * exchangeRate;
+				if (value == static_cast<int>(value)) {
+        			std::cout << date << " => " << value << " = " << std::setprecision(2) << bitcoinValue << std::endl;
+    			} else {
+					std::cout << date << " => " << value << " = " << std::fixed << std::setprecision(2) << bitcoinValue << std::endl;
+    			}
 			}
 		} else {
 			std::cerr << "Error: bad input => " << inputLine << std::endl;
