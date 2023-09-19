@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:25:28 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/09/19 16:42:03 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/09/19 18:44:38 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define SET	std::set
 # define LIST	std::list
 # define DEQUE	std::deque
+# define DIST	std::distance
 
 /* Errors */
 # define ERR_ARGC			"ERROR: For sorting we need more than one element!"

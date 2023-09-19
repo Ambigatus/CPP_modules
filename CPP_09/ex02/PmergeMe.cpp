@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:26:41 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/09/19 16:44:13 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/09/19 18:49:14 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,34 @@ PmergeMe	&PmergeMe::operator=(PmergeMe &copy)
 			_dequeNumbers.push_back(*dequeIt);
 	}
 	return *this;
+}
+
+template <typename Container, typename Iterator>
+void	PmergeMe::_mergeInsertSort(Container& cont, Iterator low, Iterator high)
+{
+	if (low != high)
+	{
+		if (DIST(low, high) <= 4)
+		{
+			for (Iterator i = low; i != high; ++i)
+			{
+				typename Container::value_type key = *i;
+				Iterator o = i;
+				while (o != low && *std::prev(o) > key)
+				{
+					*o = *std::prev(o);
+					--o;
+				}
+				*o = key;
+			}
+		}
+		else
+		{
+			Iterator mid = low;
+			std::advance(mid, DIST(low, high) / 2);
+			_mergeInsertSort(cont, low, mid);
+			_mergeInsertSort(cont, mid, high);
+			_merge(cont, low, mid, high);
+		}
+	}
 }
