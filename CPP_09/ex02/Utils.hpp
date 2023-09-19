@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:25:28 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/09/18 15:28:41 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/09/19 16:42:03 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@
 # define B_PINK "\033[1;35m"
 # define B_PURPURE "\033[1;35m"
 # define B_TURQUOISE "\033[36;1m"
-# define COUT std::cout
-# define CERR std::cerr
-# define ENDL std::endl
-# define STR  std::string
+# define COUT	std::cout
+# define CERR	std::cerr
+# define ENDL	std::endl
+# define STR	std::string
+# define SET	std::set
+# define LIST	std::list
+# define DEQUE	std::deque
 
 /* Errors */
 # define ERR_ARGC			"ERROR: For sorting we need more than one element!"
