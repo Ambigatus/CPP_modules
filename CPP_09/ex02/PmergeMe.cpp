@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:26:41 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/09/20 17:21:19 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/09/20 18:04:08 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void	PmergeMe::_merge(Container& cont, Iterator low, Iterator mid, Iterator high
 	}
 /* At the end, we copy merged elements to the original container */
 	Iterator	iter = low;
-	for (typename Container::iterator tempIter = buff.begin(); tempIter != buff.end(); ++tempIter; ++iter)
+	for (typename Container::iterator tempIter = buff.begin(); tempIter != buff.end(); ++tempIter, ++iter)
 		*iter = *tempIter;
 }
 
@@ -152,6 +152,16 @@ int	PmergeMe::_assignNumber(STR element)
 	return num;
 }
 
+bool	PmergeMe::_isNumberPositive(int num)
+{
+	if (num <= 0)
+	{
+		COUT << B_RED << ERR_POSITIVE << DEFAULT << ENDL;
+		return false;
+	}
+	return true;
+}
+
 bool	PmergeMe::_searchDuplicates()
 {
 	for (int i = 0; i < (_arraySize - 1); i++)
@@ -170,10 +180,10 @@ bool	PmergeMe::_searchDuplicates()
 
 void	PmergeMe::_showStartingArray()
 {
-	COUT << B_GREEN << "Before sort: \t" << DEFAULT;
+	COUT << B_GREEN << "Unsorted list of elements: \t" << DEFAULT;
 	for (int i = 0; i < (_arraySize); i++)
 		COUT << B_PINK << _arrayNumbers[i] << " " << DEFAULT;
-	COUT << ENDL;
+	COUT << "\n" << B_RED << LINE << "\n" << DEFAULT << ENDL;
 }
 
 double	PmergeMe::_sortingTime(STR container)
@@ -220,19 +230,19 @@ void	PmergeMe::_showSortedArray(STR container)
 	if (container == "set")
 	{
 		for (iter = _set_Numbers.begin(); iter != _set_Numbers.end(); iter++)
-			COUT << *iter << " ";
+			COUT << B_GREEN << *iter << " " << DEFAULT;
 	}
 	else if (container == "list")
 	{
 		LIST<int>::iterator iterList;
 		for (iterList = _listNumbers.begin(); iterList != _listNumbers.end(); iterList++)
-			COUT << *iterList << " ";
+			COUT << B_GREEN << *iterList << " " << DEFAULT;
 	}
 	else if (container == "deque")
 	{
 		DEQUE<int>::iterator	iterDeque;
 		for (iterDeque = _dequeNumbers.begin(); iterDeque != _dequeNumbers.end(); iterDeque++)
-			COUT << *iterDeque << " ";
+			COUT << B_GREEN << *iterDeque << " " << DEFAULT;
 	}
 	COUT << ENDL;
 }
@@ -241,18 +251,21 @@ void	PmergeMe::_showEndTime(STR container, double sortTime)
 {
 	if (container == "set")
 	{
-		COUT << B_TURQUOISE << "Time to work with a range of " << _arraySize 
-			<< " elements with std::set \t: " << sortTime << " ms" << DEFAULT << ENDL;
+		COUT << B_TURQUOISE << "Working time with a range of " << _arraySize 
+			<< " elements with " << U_GREEN <<  "std::set: " << B_BLUE 
+			<< sortTime << " ms" << DEFAULT << ENDL;
 	}
 	else if (container == "list")
 	{
-		COUT << B_TURQUOISE << "Time to work with a range of " << _arraySize 
-			<< " elements with std::list \t: " << sortTime << " ms" << DEFAULT << ENDL;
+		COUT << B_TURQUOISE << "Working time with a range of " << _arraySize 
+			<< " elements with " << U_GREEN "std::list: " << B_BLUE << sortTime
+			<< " ms" << DEFAULT << ENDL;
 	}
 	else if (container == "deque")
 	{
-		COUT << B_TURQUOISE << "Time to work with a range of " << _arraySize 
-			<< " elements with std::deque \t: " << sortTime << " ms" << DEFAULT << ENDL;
+		COUT << B_TURQUOISE << "Working time with a range of " << _arraySize 
+			<< " elements with " << U_GREEN << "std::deque: " << B_BLUE << sortTime
+			<< " ms" << DEFAULT << ENDL;
 	}
 }
 
@@ -263,7 +276,7 @@ PmergeMe::~PmergeMe()
 	delete[] _arrayNumbers;
 }
 
-void	PmergeMe::init(int argc, char **argv)
+void	PmergeMe::init(int argc, char *argv[])
 {
 	int	num;
 	_arraySize = argc - 1;
@@ -287,6 +300,7 @@ void	PmergeMe::set()
 	sortTime = _sortingTime("set");
 	_showSortedArray("set");
 	_showEndTime("set", sortTime);
+	COUT << "\n" << B_RED << LINE << DEFAULT << "\n\n";
 }
 
 void	PmergeMe::list()
@@ -296,6 +310,7 @@ void	PmergeMe::list()
 	sortTime = _sortingTime("list");
 	_showSortedArray("list");
 	_showEndTime("list", sortTime);
+	COUT << "\n" << B_RED << LINE << DEFAULT << "\n\n";
 }
 
 void	PmergeMe::deque()
@@ -305,4 +320,5 @@ void	PmergeMe::deque()
 	sortTime = _sortingTime("deque");
 	_showSortedArray("deque");
 	_showEndTime("deque", sortTime);
+	COUT << "\n" << B_RED << LINE << DEFAULT << "\n\n";
 }
