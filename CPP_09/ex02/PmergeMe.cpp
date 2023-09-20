@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:26:41 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/09/20 18:04:08 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/09/20 19:17:35 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,13 +162,13 @@ bool	PmergeMe::_isNumberPositive(int num)
 	return true;
 }
 
-bool	PmergeMe::_searchDuplicates()
+bool	PmergeMe::_searchDuplicates(int array[], int size)
 {
-	for (int i = 0; i < (_arraySize - 1); i++)
+	for (int i = 0; i < (size - 1); i++)
 	{
-		for (int o = (i + 1); o < (_arraySize); o++)
+		for (int o = (i + 1); o < (size); o++)
 		{
-			if (_arrayNumbers[i] == _arrayNumbers[o])
+			if (array[i] == array[o])
 			{
 				COUT << B_RED << ERR_DUPLICATE << DEFAULT << ENDL;
 				return true;
@@ -290,6 +290,8 @@ void	PmergeMe::init(int argc, char *argv[])
 		else
 			_exitProgram();
 	}
+	if (_searchDuplicates(_arrayNumbers, _arraySize))
+		exit(-1);
 	_showStartingArray();
 }
 

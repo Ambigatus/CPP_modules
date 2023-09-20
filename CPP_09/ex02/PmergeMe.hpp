@@ -6,7 +6,7 @@
 /*   By: ddzuba <ddzuba@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:24:17 by ddzuba            #+#    #+#             */
-/*   Updated: 2023/09/20 17:50:59 by ddzuba           ###   ########.fr       */
+/*   Updated: 2023/09/20 19:12:12 by ddzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class PmergeMe
 		void		_exitProgram();
 		int			_assignNumber(STR element);
 		bool		_isNumberPositive(int number);
-		bool		_searchDuplicates();
+		bool		_searchDuplicates(int array[], int size);
 		void		_showStartingArray();
 		double		_sortingTime(STR container);
 		void		_showSortedArray(STR container);
